@@ -27,26 +27,39 @@
           <p class="go-back-link">
             <a class="link-back" href="./index.html">Go back</a>
           </p>
-          <form class="feedback-form" autocomplete="off">
-            <label class="label-form">
-              Email
-              <input
-                class="input-email"
-                type="email"
-                name="email"
-                placeholder="Type area"
-                autofocus
-              />
+          <form class="form">
+            <label class="label-form-delay">
+              Delay (ms)
+              <input class="input-delay" type="number" name="delay" required />
             </label>
-            <label class="label-form">
-              Message
-              <textarea
-                class="input-message"
-                name="message"
-                rows="8"
-              ></textarea>
-            </label>
-            <button class="btn-submit" type="submit">Submit</button>
+
+            <fieldset class="fieldset">
+              <legend>State</legend>
+              <label class="label-form-radio">
+                <input
+                  class="radio-fulfilled"
+                  type="radio"
+                  name="state"
+                  value="fulfilled"
+                  required
+                />
+                Fulfilled
+              </label>
+              <label class="label-form-radio">
+                <input
+                  class="radio-rejected"
+                  type="radio"
+                  name="state"
+                  value="rejected"
+                  required
+                />
+                Rejected
+              </label>
+            </fieldset>
+
+            <button class="btn-submit" type="submit">
+              Create notification
+            </button>
           </form>
         </div>
       </section>

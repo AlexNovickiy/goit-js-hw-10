@@ -25,10 +25,11 @@ const options = {
     if (selectedDates[0].getTime() < Date.now()) {
         iziToast.show({
           title: '<svg class="brick" width="24" height="24"><use href="../img/sprite.svg#icon-brick"></use></svg><p class="title-error">Error</p>',
-          message: 'Illegal operation',
+          message: 'Please choose a date in the future',
           backgroundColor: '#ef4040',
-          timeout: null,
+          timeout: 4000,
           class: 'message-warning',
+          position: 'topRight'
 
       });
         btnStart.disabled = true;
@@ -76,7 +77,7 @@ function updateTimerDisplay({ days, hours, minutes, seconds }) {
 
 function addLeadingZero(value) {
   for (const key of Object.keys(value)) {
-    value[key] = value[key] = value[key].toString().padStart(2, '0');
+    value[key] = value[key].toString().padStart(2, '0');
   }
   return value;
 }
