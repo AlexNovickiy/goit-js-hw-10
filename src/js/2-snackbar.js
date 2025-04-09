@@ -1,11 +1,12 @@
 import iziToast from "izitoast";
 import "izitoast/dist/css/iziToast.min.css";
+import brick from "../img/brick.svg";
+import checkMark from "../img/check-mark.svg";
 
 const form = document.querySelector('.form');
 const delayInput = form.querySelector('.input-delay');
 const fulfilled = form.querySelector('.radio-fulfilled');
 const rejected = form.querySelector('.radio-rejected');
-const submit = form.querySelector('.btn-submit');
 
 
 form.addEventListener('submit', event => {
@@ -30,13 +31,15 @@ form.addEventListener('submit', event => {
     })
         .then(delay => {
             iziToast.show({
-                title: '<svg class="brick" width="24" height="24"><use href="../img/sprite.svg#icon-check-mark"></use></svg><p class="title-error">OK</p>',
+                title: 'OK',
+                iconUrl: checkMark,
                 message: `Fulfilled promise in ${delay}ms`,
                 backgroundColor: '#59a10d',
                 timeout: 4000,
                 class: 'message-fulfilled',
                 position: 'topRight',
-                messageColor: 'white'
+                messageColor: 'white',
+                titleColor: 'white',
             });
             return `Проміс завершився успішно через ${delay} мс`;
         })
@@ -45,13 +48,15 @@ form.addEventListener('submit', event => {
         })
         .catch(delay => {
             iziToast.show({
-                title: '<svg class="brick" width="24" height="24"><use href="../img/sprite.svg#icon-check-mark"></use></svg><p class="title-error">Error</p>',
+                title: 'Error',
+                iconUrl: brick,
                 message: `Rejected promise in ${delay}ms`,
                 backgroundColor: '#ef4040',
                 timeout: 4000,
                 class: 'message-rejected',
                 position: 'topRight',
-                messageColor: 'white'
+                messageColor: 'white',
+                titleColor: 'white',
             });
         })
 });

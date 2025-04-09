@@ -127,23 +127,12 @@ img {
 }
 
 
-.iziToast.message-warning.iziToast-theme-light.iziToast-animateInside.iziToast-opened {
-  width: 302px;
-  height: 64px;
-  padding: 20px;
-}
 
 .iziToast>.iziToast-body .iziToast-texts {
   margin: 10px 0 0;
   padding-right: 2px;
   display: inline-block;
   
-}
-
-.iziToast.message-warning.iziToast-theme-light.iziToast-animateInside.iziToast-opened {
-  width: 450px;
-  padding:20px;
-  height: auto;
 }
 
 .iziToast>.iziToast-body .iziToast-texts {
@@ -153,7 +142,6 @@ img {
 
 .iziToast-title.slideIn {
   display: flex;
- 
 }
 
 .iziToast-message.slideIn {
@@ -177,7 +165,6 @@ img {
 }
 
 .iziToast.message-warning.iziToast-theme-light.iziToast-animateInside.iziToast-opened .iziToast-body .iziToast-texts .iziToast-message.slideIn {
-  color: #ffffff;
   text-align: center;
   display: flex;
   align-items: center;
@@ -203,6 +190,7 @@ img {
 
 .iziToast-capsule .iziToast>.iziToast-body .iziToast-texts {
   margin: 0;
+  margin-left: 20px;
 }
 
 
@@ -216,6 +204,10 @@ img {
 
 .iziToast-wrapper.iziToast-wrapper-topCenter {
   text-align: right;
+}
+
+.iziToast>.iziToast-body .iziToast-icon {
+  margin: 20px;
 }
 
 

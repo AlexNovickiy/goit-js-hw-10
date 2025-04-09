@@ -2,9 +2,7 @@ import flatpickr from "flatpickr";
 import "flatpickr/dist/flatpickr.min.css";
 import iziToast from "izitoast";
 import "izitoast/dist/css/iziToast.min.css";
-
-
-
+import brick from "../img/brick.svg";
 
 const datetimePicker = document.querySelector('#datetime-picker');
 const btnStart = document.querySelector('.btn-start');
@@ -24,13 +22,15 @@ const options = {
   onClose(selectedDates) {
     if (selectedDates[0].getTime() < Date.now()) {
         iziToast.show({
-          title: '<svg class="brick" width="24" height="24"><use href="../img/sprite.svg#icon-brick"></use></svg><p class="title-error">Error</p>',
+          title: 'Error',
+          iconUrl: brick,
           message: 'Please choose a date in the future',
           backgroundColor: '#ef4040',
-          timeout: 4000,
+          timeout: null,
           class: 'message-warning',
-          position: 'topRight'
-
+          position: 'topRight',
+          titleColor: 'white',
+          messageColor: 'white',
       });
         btnStart.disabled = true;
       } else {
